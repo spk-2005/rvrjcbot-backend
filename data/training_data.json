@@ -1,0 +1,601 @@
+{
+  "greetings": {
+    "keywords": [
+      "hello",
+      "hi",
+      "hey",
+      "good morning",
+      "good afternoon",
+      "good evening",
+      "namaste"
+    ],
+    "response": "Hello! 👋 Welcome to the RVR & JC College of Engineering virtual assistant. How can I help you today?",
+    "sentiment": "positive",
+    "links": []
+  },
+  "how_are_you": {
+    "keywords": [
+      "how are you",
+      "how's it going",
+      "how do you do"
+    ],
+    "response": "I'm doing great, thank you! 😊 I'm here to provide information about RVR & JC College of Engineering. What would you like to know?",
+    "sentiment": "positive",
+    "links": []
+  },
+  "thanks": {
+    "keywords": [
+      "thank you",
+      "thanks",
+      "thank you so much",
+      "thanks a lot",
+      "appreciate it"
+    ],
+    "response": "You're welcome! 😊 If you need anything else about RVRJC College, feel free to ask. I'm here to help!",
+    "sentiment": "positive",
+    "links": []
+  },
+  "goodbye": {
+    "keywords": [
+      "bye",
+      "goodbye",
+      "see you",
+      "talk to you later",
+      "take care"
+    ],
+    "response": "Goodbye! 👋 Have a great day ahead. Feel free to return anytime with more questions about RVR & JC College!",
+    "sentiment": "positive",
+    "links": []
+  },
+  "chat_start": {
+    "keywords": [
+      "start chat",
+      "begin",
+      "start",
+      "get started",
+      "let's talk"
+    ],
+    "response": "Sure! I'm here to help you with anything related to RVRJC College. You can ask about departments, admissions, placement records, facilities, or any other information you need.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Visit our official website",
+        "url": "https://rvrjcce.ac.in/"
+      }
+    ]
+  },
+  "help": {
+    "keywords": [
+      "help",
+      "support",
+      "assist",
+      "guide me",
+      "what can you do"
+    ],
+    "response": "I can assist you with information about:\n- Departments and courses\n- Admission procedures\n- Placement records\n- Campus facilities\n- Faculty details\n- College achievements\n- Contact information\nWhat would you like to know more about?",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "Departments",
+        "url": "https://rvrjcce.ac.in/departments"
+      },
+      {
+        "text": "Admissions",
+        "url": "https://rvrjcce.ac.in/admissions"
+      }
+    ]
+  },
+  "about_college": {
+    "keywords": [
+      "tell me about college",
+      "about rvrjc",
+      "college info",
+      "college history",
+      "when established"
+    ],
+    "response": "RVR & JC College of Engineering (RVRJCCE) was established in 1985 and is one of the premier autonomous engineering institutions in Andhra Pradesh. Located in Chowdavaram, Guntur, the college is approved by AICTE and affiliated with Acharya Nagarjuna University. With state-of-the-art infrastructure, experienced faculty, and strong industry connections, RVRJCCE has been consistently recognized for its quality education and excellent placement record.",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "About RVRJC",
+        "url": "https://rvrjcce.ac.in/about-us"
+      },
+      {
+        "text": "College History",
+        "url": "https://rvrjcce.ac.in/about-us/history"
+      }
+    ]
+  },
+  "location": {
+    "keywords": [
+      "location",
+      "where is college",
+      "college location",
+      "address",
+      "directions",
+      "how to reach"
+    ],
+    "response": "RVR & JC College of Engineering is located at:\nChowdavaram\nGuntur - 522019\nAndhra Pradesh, India\n\nThe campus is about 8 km from Guntur City and easily accessible by local transportation including buses and auto-rickshaws.",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "Campus Map",
+        "url": "https://rvrjcce.ac.in/campus/map"
+      },
+      {
+        "text": "Contact Us",
+        "url": "https://rvrjcce.ac.in/contact-us"
+      }
+    ]
+  },
+  "achievements": {
+    "keywords": [
+      "achievements",
+      "notable achievements",
+      "college success",
+      "recognition"
+    ],
+    "response": "Over the past 39 years, RVR & JC College of Engineering has earned numerous achievements:\n- Accredited 7 times by NBA for all eligible courses\n- NAAC A+ Grade in 2021\n- Ranked under NIRF 201-250 band (2022)\n- ISO 9001:2015 certified institution\n- Recipient of several research grants from UGC, DST, and other agencies\n- Students consistently excel in national competitions and hackathons",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "College Achievements",
+        "url": "https://rvrjcce.ac.in/about-us/achievements"
+      },
+      {
+        "text": "Accreditations",
+        "url": "https://rvrjcce.ac.in/about-us/accreditations"
+      }
+    ]
+  },
+  "accreditation": {
+    "keywords": [
+      "accreditation",
+      "NBA approval",
+      "NAAC",
+      "ISO certification",
+      "approvals"
+    ],
+    "response": "RVR & JC College of Engineering holds prestigious accreditations:\n- NBA Accreditation: The institution has been accredited 7 times for all eligible engineering courses\n- NAAC: Accredited with 'A+' grade\n- ISO 9001:2015 certified institution\n- Approved by AICTE, New Delhi\n- Affiliated to Acharya Nagarjuna University\n- Autonomous status granted by UGC",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Accreditation Details",
+        "url": "https://rvrjcce.ac.in/about-us/accreditations"
+      },
+      {
+        "text": "NAAC Certificate",
+        "url": "https://rvrjcce.ac.in/about-us/accreditations/naac"
+      }
+    ]
+  },
+  "rankings": {
+    "keywords": [
+      "rank",
+      "rankings",
+      "college rank",
+      "NIRF",
+      "college position"
+    ],
+    "response": "RVR & JC College of Engineering has achieved notable rankings:\n- NIRF ranking in the band 201-250 (2022)\n- Among the top engineering colleges in Andhra Pradesh\n- Consistently ranked among the top 100 private engineering colleges in India by various agencies",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "NIRF Rankings",
+        "url": "https://rvrjcce.ac.in/about-us/rankings"
+      }
+    ]
+  },
+  "vision": {
+    "keywords": [
+      "vision",
+      "goal",
+      "college mission",
+      "purpose",
+      "objectives"
+    ],
+    "response": "Vision: To develop integrated manpower with right attitude, adequate knowledge and skills to meet the challenges of the industry and society.\n\nMission: To provide quality education with international standards, building strong links with industry, encouraging research and innovation, and imparting professional ethics and leadership qualities.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Vision & Mission",
+        "url": "https://rvrjcce.ac.in/about-us/vision-mission"
+      }
+    ]
+  },
+  "principal_message": {
+    "keywords": [
+      "principal",
+      "principal message",
+      "college statement",
+      "head of institution"
+    ],
+    "response": "Our Principal emphasizes producing well-rounded graduates equipped with technical knowledge, professional skills, ethical values, and a commitment to society. The focus is on fostering innovation, research aptitude, and industry-ready skills among students to prepare them for global challenges.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Principal's Message",
+        "url": "https://rvrjcce.ac.in/about-us/principal-message"
+      }
+    ]
+  },
+  "sports": {
+    "keywords": [
+      "sports",
+      "sports facilities",
+      "games",
+      "physical activities",
+      "indoor games",
+      "outdoor games",
+      "sports at college"
+    ],
+    "response": "RVR & JC College offers excellent sports infrastructure including:\n- Modern gymnasium with fitness equipment\n- Cricket ground with practice nets\n- Basketball courts with floodlights\n- Volleyball courts\n- Indoor badminton courts\n- Table tennis facilities\n- Athletics track\n\nThe college organizes annual sports meets and encourages participation in inter-college competitions. Many students have represented the college at university and state levels.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Sports Facilities",
+        "url": "https://rvrjcce.ac.in/campus/sports"
+      },
+      {
+        "text": "Sports Achievements",
+        "url": "https://rvrjcce.ac.in/campus/sports/achievements"
+      }
+    ]
+  },
+  "departments": {
+    "keywords": [
+      "departments",
+      "branches",
+      "courses offered",
+      "streams",
+      "specializations",
+      "programs"
+    ],
+    "response": "RVR & JC College offers various engineering departments including:\n- Computer Science Engineering (CSE)\n- Information Technology (IT)\n- Electronics & Communication Engineering (ECE)\n- Electrical & Electronics Engineering (EEE)\n- Mechanical Engineering\n- Civil Engineering\n- Chemical Engineering\n- Artificial Intelligence & Data Science\n\nThe college also offers M.Tech, MCA, and Ph.D. programs in several disciplines.",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "All Departments",
+        "url": "https://rvrjcce.ac.in/departments"
+      },
+      {
+        "text": "UG Programs",
+        "url": "https://rvrjcce.ac.in/academics/undergraduate"
+      },
+      {
+        "text": "PG Programs",
+        "url": "https://rvrjcce.ac.in/academics/postgraduate"
+      }
+    ]
+  },
+  "cse_department": {
+    "keywords": [
+      "cse",
+      "computer science",
+      "computer engineering",
+      "computer science department",
+      "CSE department"
+    ],
+    "response": "The Department of Computer Science Engineering (CSE) at RVR & JC College was established in 1985 and is known for its excellent infrastructure and faculty. The department offers B.Tech in CSE with an intake of 180 students, M.Tech programs, and Ph.D. research opportunities. The department has well-equipped labs including Programming Lab, Networks Lab, and specialized research facilities. CSE students consistently achieve excellent placements in top IT companies.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "CSE Department",
+        "url": "https://rvrjcce.ac.in/departments/cse"
+      },
+      {
+        "text": "CSE Faculty",
+        "url": "https://rvrjcce.ac.in/departments/cse/faculty"
+      },
+      {
+        "text": "CSE Placements",
+        "url": "https://rvrjcce.ac.in/departments/cse/placements"
+      }
+    ]
+  },
+  "ece_department": {
+    "keywords": [
+      "ece",
+      "electronics",
+      "electronics and communication",
+      "communication engineering",
+      "ECE department"
+    ],
+    "response": "The Department of Electronics & Communication Engineering (ECE) at RVR & JC College offers comprehensive education in electronic systems, communication networks, and signal processing. The department has modern laboratories for microprocessors, VLSI design, communication systems, and embedded systems. ECE graduates are regularly placed in leading electronics, telecommunications, and IT companies.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "ECE Department",
+        "url": "https://rvrjcce.ac.in/departments/ece"
+      },
+      {
+        "text": "ECE Labs",
+        "url": "https://rvrjcce.ac.in/departments/ece/laboratories"
+      },
+      {
+        "text": "ECE Placements",
+        "url": "https://rvrjcce.ac.in/departments/ece/placements"
+      }
+    ]
+  },
+  "placements": {
+    "keywords": [
+      "placements",
+      "campus placements",
+      "recruitment",
+      "job opportunities",
+      "companies visiting",
+      "placement cell"
+    ],
+    "response": "RVR & JC College has an excellent placement record with:\n- Dedicated Training & Placement Cell\n- 80%+ placement rate for eligible students\n- 400+ companies visiting for campus recruitment\n- Top recruiters include TCS, Infosys, Wipro, Accenture, IBM, Cognizant, HCL, and many more\n- Pre-placement training programs including aptitude, technical skills, and soft skills\n- Average salary package of 4-6 LPA with highest packages going up to 12+ LPA",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Placement Cell",
+        "url": "https://rvrjcce.ac.in/placements"
+      },
+      {
+        "text": "Placement Statistics",
+        "url": "https://rvrjcce.ac.in/placements/statistics"
+      },
+      {
+        "text": "Recruiting Companies",
+        "url": "https://rvrjcce.ac.in/placements/recruiters"
+      }
+    ]
+  },
+  "admission_process": {
+    "keywords": [
+      "admission",
+      "how to apply",
+      "admission process",
+      "entrance exam",
+      "eligibility",
+      "application procedure"
+    ],
+    "response": "For B.Tech admissions at RVR & JC College:\n- Admissions are based on AP EAPCET (formerly EAMCET) rank\n- Category A (Convener quota): 70% seats through state counseling\n- Category B (Management quota): 30% seats\n\nFor M.Tech/MCA:\n- Based on PGECET/ICET rank\n\nEligibility: Minimum 60% in 10+2 with PCM for B.Tech\nApplication process and details available on the college website or by contacting the admissions office.",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "Admission Portal",
+        "url": "https://rvrjcce.ac.in/admissions"
+      },
+      {
+        "text": "UG Admissions",
+        "url": "https://rvrjcce.ac.in/admissions/undergraduate"
+      },
+      {
+        "text": "PG Admissions",
+        "url": "https://rvrjcce.ac.in/admissions/postgraduate"
+      },
+      {
+        "text": "Apply Online",
+        "url": "https://rvrjcce.ac.in/admissions/apply-online"
+      }
+    ]
+  },
+  "fees": {
+    "keywords": [
+      "fees",
+      "fee structure",
+      "tuition fee",
+      "college fees",
+      "cost of education",
+      "semester fee"
+    ],
+    "response": "The fee structure at RVR & JC College varies by program and category. For detailed and up-to-date fee information, please visit the college website or contact the administrative office directly. The college also offers scholarships for meritorious students and those from economically disadvantaged backgrounds.",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "Fee Structure",
+        "url": "https://rvrjcce.ac.in/admissions/fee-structure"
+      },
+      {
+        "text": "Fee Payment",
+        "url": "https://rvrjcce.ac.in/admissions/fee-payment"
+      }
+    ]
+  },
+  "hostel_facilities": {
+    "keywords": [
+      "hostel",
+      "accommodation",
+      "hostel facilities",
+      "boarding",
+      "residential facilities",
+      "staying options"
+    ],
+    "response": "RVR & JC College provides separate hostel facilities for boys and girls with:\n- Well-furnished rooms (single, double, and triple sharing options)\n- 24/7 security and surveillance\n- Clean drinking water and hygienic food facilities\n- Wi-Fi connectivity\n- Common rooms with recreational facilities\n- Regular maintenance and cleaning services\n- Medical facilities and first-aid\n\nHostel admissions are based on availability and can be applied for during the admission process.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Hostel Information",
+        "url": "https://rvrjcce.ac.in/campus/hostels"
+      },
+      {
+        "text": "Hostel Application",
+        "url": "https://rvrjcce.ac.in/campus/hostels/application"
+      }
+    ]
+  },
+  "infrastructure": {
+    "keywords": [
+      "infrastructure",
+      "facilities",
+      "campus facilities",
+      "amenities",
+      "buildings",
+      "campus"
+    ],
+    "response": "RVR & JC College boasts excellent infrastructure including:\n- Modern air-conditioned classrooms with audio-visual facilities\n- 60+ well-equipped laboratories\n- Central library with 80,000+ volumes and digital resources\n- Wi-Fi enabled campus\n- Seminar halls and conference rooms\n- Separate hostels for boys and girls\n- Cafeteria and food court\n- Banking services with ATM facility\n- Healthcare center\n- Sports and recreational facilities\n- Uninterrupted power supply\n- Transport facilities from various parts of the city",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Campus Tour",
+        "url": "https://rvrjcce.ac.in/campus/virtual-tour"
+      },
+      {
+        "text": "Facilities",
+        "url": "https://rvrjcce.ac.in/campus/facilities"
+      },
+      {
+        "text": "Infrastructure Gallery",
+        "url": "https://rvrjcce.ac.in/gallery/infrastructure"
+      }
+    ]
+  },
+  "library": {
+    "keywords": [
+      "library",
+      "books",
+      "digital library",
+      "e-resources",
+      "journals",
+      "reading room"
+    ],
+    "response": "The Central Library at RVR & JC College is a knowledge hub featuring:\n- Collection of over 80,000 books and reference materials\n- Subscription to national and international journals\n- Digital library with e-books and online journals\n- Access to IEEE, ASME, Springer, and other digital resources\n- Spacious reading halls\n- Reprography facilities\n- OPAC (Online Public Access Catalog) system\n- Membership in DELNET and National Digital Library\n\nThe library remains open from 8:00 AM to 8:00 PM on all working days.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Central Library",
+        "url": "https://rvrjcce.ac.in/campus/library"
+      },
+      {
+        "text": "Digital Resources",
+        "url": "https://rvrjcce.ac.in/campus/library/digital-resources"
+      },
+      {
+        "text": "Library Rules",
+        "url": "https://rvrjcce.ac.in/campus/library/rules"
+      }
+    ]
+  },
+  "scholarships": {
+    "keywords": [
+      "scholarships",
+      "financial aid",
+      "fee concession",
+      "merit scholarship",
+      "student support"
+    ],
+    "response": "RVR & JC College offers various scholarship opportunities including:\n- Merit scholarships for academically outstanding students\n- Government scholarships for SC/ST/BC/EBC students\n- Fee concessions for economically disadvantaged students\n- Sports scholarships for athletes\n- Special scholarships for girl students\n\nFor detailed information and application procedures, please contact the college administrative office.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Scholarships",
+        "url": "https://rvrjcce.ac.in/students/scholarships"
+      },
+      {
+        "text": "Financial Aid",
+        "url": "https://rvrjcce.ac.in/students/financial-aid"
+      }
+    ]
+  },
+  "notable_alumni": {
+    "keywords": [
+      "alumni",
+      "famous alumni",
+      "alumni network",
+      "graduates",
+      "successful alumni"
+    ],
+    "response": "RVR & JC College has a strong network of successful alumni working in various prestigious organizations worldwide. Many alumni have reached leadership positions in top companies, started successful ventures, pursued higher education at premier institutions, and contributed significantly to their fields. The college maintains an active alumni association that regularly organizes interactions between current students and alumni.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Alumni Association",
+        "url": "https://rvrjcce.ac.in/alumni"
+      },
+      {
+        "text": "Distinguished Alumni",
+        "url": "https://rvrjcce.ac.in/alumni/distinguished"
+      },
+      {
+        "text": "Alumni Portal",
+        "url": "https://rvrjcce.ac.in/alumni/portal"
+      }
+    ]
+  },
+  "research": {
+    "keywords": [
+      "research",
+      "research facilities",
+      "research projects",
+      "innovation",
+      "publications",
+      "patents"
+    ],
+    "response": "Research at RVR & JC College is encouraged through:\n- Dedicated research centers in emerging technologies\n- Faculty research projects funded by UGC, DST, AICTE, etc.\n- Regular publication of research papers in reputed journals\n- Collaboration with industry and other academic institutions\n- Organizing international conferences and workshops\n- Innovation and entrepreneurship development cell\n- Incubation center for student startups\n\nThe college has received several research grants and has contributed numerous publications to national and international journals.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Research Centers",
+        "url": "https://rvrjcce.ac.in/research/centers"
+      },
+      {
+        "text": "Publications",
+        "url": "https://rvrjcce.ac.in/research/publications"
+      },
+      {
+        "text": "Innovation Cell",
+        "url": "https://rvrjcce.ac.in/research/innovation-cell"
+      }
+    ]
+  },
+  "contact_info": {
+    "keywords": [
+      "contact",
+      "phone number",
+      "email",
+      "contact details",
+      "reach out",
+      "helpline"
+    ],
+    "response": "You can contact RVR & JC College of Engineering at:\n\nAddress: Chowdavaram, Guntur - 522019, Andhra Pradesh, India\nPhone: +91-863-2288588\nEmail: principal@rvrjc.ac.in\nWebsite: https://rvrjcce.ac.in\n\nFor admissions: +91-863-2288444\nFor placements: +91-863-2288777",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "Contact Us",
+        "url": "https://rvrjcce.ac.in/contact-us"
+      },
+      {
+        "text": "Reach Us",
+        "url": "https://rvrjcce.ac.in/contact-us/reach-us"
+      },
+      {
+        "text": "Feedback Form",
+        "url": "https://rvrjcce.ac.in/contact-us/feedback"
+      }
+    ]
+  },
+  "events": {
+    "keywords": [
+      "events",
+      "college events",
+      "fests",
+      "technical fests",
+      "cultural events",
+      "celebrations"
+    ],
+    "response": "RVR & JC College organizes various events throughout the academic year including:\n- ECSTASY: Annual technical fest featuring competitions, workshops, and exhibitions\n- EUPHORIA: Cultural festival showcasing talents in music, dance, drama, and fine arts\n- SPORTS MEET: Annual inter-departmental sports competition\n- TECH TALKS: Regular guest lectures by industry experts and academicians\n- ALUMNI MEET: Annual gathering of alumni\n- FRESHERS' DAY: Welcome celebration for new students\n- GRADUATION DAY: Ceremony honoring graduating students\n\nThese events provide students with opportunities to showcase their talents and develop organizational skills.",
+    "sentiment": "positive",
+    "links": [
+      {
+        "text": "Events Calendar",
+        "url": "https://rvrjcce.ac.in/events/calendar"
+      },
+      {
+        "text": "Technical Fests",
+        "url": "https://rvrjcce.ac.in/events/technical-fests"
+      },
+      {
+        "text": "Cultural Activities",
+        "url": "https://rvrjcce.ac.in/events/cultural"
+      },
+      {
+        "text": "Event Gallery",
+        "url": "https://rvrjcce.ac.in/gallery/events"
+      }
+    ]
+  }
+}

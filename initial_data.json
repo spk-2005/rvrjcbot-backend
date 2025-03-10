@@ -1,0 +1,24 @@
+{
+  "greetings": {
+    "keywords": [
+      "hello",
+      "hi",
+      "hey",
+      "good morning",
+      "good afternoon",
+      "good evening",
+      "namaste"
+    ],
+    "response": "Hello! 👋 Welcome to the RVR & JC College of Engineering virtual assistant. How can I help you today?",
+    "sentiment": "positive"
+  },
+  "how_are_you": {
+    "keywords": [
+      "how are you",
+      "how's it going",
+      "how do you do"
+    ],
+    "response": "I'm doing great, thank you! 😊 I'm here to provide information about RVR & JC College of Engineering. What would you like to know?",
+    "sentiment": "positive"
+  }
+}
