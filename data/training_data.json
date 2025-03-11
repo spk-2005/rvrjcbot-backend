@@ -595,4 +595,24 @@
       }
     ]
   }
+  ,
+    "join_college": {
+      "keywords": ["i want to join", "how to join", "admission", "apply for college", "join college", "get into college", "interested to join"],
+      "response": "RVR & JC College of Engineering (RVRJCCE) welcomes new students! Here's how you can join: Look at these links once",
+      "sentiment": "positive",
+      "links": [
+        {
+          "url": "https://rvrjcce.ac.in/admissions",
+          "text": "Admission Process"
+        },
+        {
+          "url": "https://rvrjcce.ac.in/eligibility-criteria",
+          "text": "Eligibility Criteria"
+        },
+        {
+          "url": "https://rvrjcce.ac.in/application-form",
+          "text": "Apply Online"
+        }
+      ]
+    }
 }

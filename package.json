@@ -15,6 +15,7 @@
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dictionary-en": "^4.0.0",
     "docx": "^9.2.0",
     "express": "^4.21.2",
     "franc": "^6.2.0",
@@ -27,6 +28,10 @@
     "natural": "^8.0.1",
     "nlpjs": "^0.0.2",
     "node-nlp": "^5.0.0-alpha.5",
+    "nspell": "^2.1.5",
+    "sentiment": "^5.0.2",
+    "spelling-corrector": "^3.0.0",
+    "stopword": "^3.1.4",
     "string-similarity": "^4.0.4"
   }
 }
