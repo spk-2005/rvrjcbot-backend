@@ -2,16 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Set up __dirname equivalent for ES modules
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Global variable to store training data
+
 let trainingData = {};
 
-/**
- * Load training data from JSON file
- */
 export const loadTrainingData = () => {
     try {
         const dataPath = path.join(__dirname, '..', 'data', 'training_data.json');
@@ -33,14 +30,13 @@ export const loadTrainingData = () => {
 const calculateSimilarity = (message, keywords) => {
     const messageLower = message.toLowerCase();
     
-    // Check for exact matches first
+    
     for (const keyword of keywords) {
         if (messageLower.includes(keyword.toLowerCase())) {
             return 1;
         }
     }
     
-    // Calculate partial matches
     let matchScore = 0;
     keywords.forEach(keyword => {
         const keywordWords = keyword.toLowerCase().split(' ');
@@ -51,7 +47,7 @@ const calculateSimilarity = (message, keywords) => {
         });
     });
     
-    return Math.min(matchScore, 0.9); // Cap at 0.9 for partial matches
+    return Math.min(matchScore, 0.9);
 };
 
 /**
@@ -61,9 +57,9 @@ const calculateSimilarity = (message, keywords) => {
  */
 const findBestMatch = (message) => {
     let bestMatch = null;
-    let highestScore = 0.4; // Threshold score to consider a match
+    let highestScore = 0.4; 
     
-    // Iterate through all intent categories
+    
     Object.entries(trainingData).forEach(([intent, data]) => {
         const score = calculateSimilarity(message, data.keywords);
         if (score > highestScore) {
@@ -72,7 +68,7 @@ const findBestMatch = (message) => {
                 intent,
                 response: data.response,
                 sentiment: data.sentiment,
-                links: data.links || [], // Ensure links are included
+                links: data.links || [], 
                 score: highestScore
             };
         }
@@ -88,14 +84,14 @@ const findBestMatch = (message) => {
  * @returns {Object} - Response and follow-up flag
  */
 const generateFollowUp = (message, history) => {
-    // Extract the last bot response if it exists
+    
     const lastBotMessage = history.length >= 2 
         ? history[history.length - 1].message 
         : null;
     
     const messageLower = message.toLowerCase();
     
-    // Handle follow-up queries about departments
+    
     if (lastBotMessage && lastBotMessage.includes('departments') && messageLower.includes('cse')) {
         return {
             response: trainingData.cse_department.response,
@@ -104,7 +100,8 @@ const generateFollowUp = (message, history) => {
         };
     }
     
-    // Handle follow-up queries about placements
+    
+    
     if (lastBotMessage && lastBotMessage.includes('placement') && 
         (messageLower.includes('companies') || messageLower.includes('salary') || messageLower.includes('package'))) {
         return {
@@ -117,7 +114,7 @@ const generateFollowUp = (message, history) => {
         };
     }
     
-    // Handle follow-up queries about admission
+    
     if (lastBotMessage && lastBotMessage.includes('admission') && 
         (messageLower.includes('when') || messageLower.includes('date') || messageLower.includes('deadline'))) {
         return {
@@ -154,7 +151,7 @@ export const getChatbotResponse = (message) => {
         };
     }
     
-    // Default response if no match is found
+    
     return {
         text: "I'm not sure I understand your question. Could you rephrase it? You can ask me about departments, admissions, placements, facilities, or contact information.",
         links: []
@@ -175,7 +172,7 @@ export const handleConversation = (message, history) => {
         return followUp;
     }
     
-    // No follow-up context, handle as a new query
+    
     const response = getChatbotResponse(message);
     return {
         response: response.text,
