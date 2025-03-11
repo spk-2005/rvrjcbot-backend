@@ -75,10 +75,7 @@
     "response": "I can assist you with information about:\n- Departments and courses\n- Admission procedures\n- Placement records\n- Campus facilities\n- Faculty details\n- College achievements\n- Contact information\nWhat would you like to know more about?",
     "sentiment": "neutral",
     "links": [
-      {
-        "text": "Departments",
-        "url": "https://rvrjcce.ac.in/departments"
-      },
+     
       {
         "text": "Admissions",
         "url": "https://rvrjcce.ac.in/admissions"
@@ -98,11 +95,11 @@
     "links": [
       {
         "text": "About RVRJC",
-        "url": "https://rvrjcce.ac.in/about-us"
+        "url": "https://rvrjcce.ac.in/xrvrjchistory.php"
       },
       {
         "text": "College History",
-        "url": "https://rvrjcce.ac.in/about-us/history"
+        "url": "https://rvrjcce.ac.in/xrvrjchistory.php"
       }
     ]
   },
@@ -120,7 +117,7 @@
     "links": [
       {
         "text": "Campus Map",
-        "url": "https://rvrjcce.ac.in/campus/map"
+        "url": "https://rvrjcce.ac.in/xcampusmap.php"
       },
       {
         "text": "Contact Us",
@@ -144,7 +141,7 @@
       },
       {
         "text": "Accreditations",
-        "url": "https://rvrjcce.ac.in/about-us/accreditations"
+        "url": "https://rvrjcce.ac.in/xaccreditationandaffliation.php"
       }
     ]
   },
@@ -161,11 +158,11 @@
     "links": [
       {
         "text": "Accreditation Details",
-        "url": "https://rvrjcce.ac.in/about-us/accreditations"
+        "url": "https://rvrjcce.ac.in/xaccreditationandaffliation.php"
       },
       {
         "text": "NAAC Certificate",
-        "url": "https://rvrjcce.ac.in/about-us/accreditations/naac"
+        "url": "https://rvrjcce.ac.in/xrankingsandrecognitions.php"
       }
     ]
   },
@@ -182,7 +179,7 @@
     "links": [
       {
         "text": "NIRF Rankings",
-        "url": "https://rvrjcce.ac.in/about-us/rankings"
+        "url": "https://rvrjcce.ac.in/xrankingsandrecognitions.php"
       }
     ]
   },
@@ -199,7 +196,7 @@
     "links": [
       {
         "text": "Vision & Mission",
-        "url": "https://rvrjcce.ac.in/about-us/vision-mission"
+        "url": "https://rvrjcce.ac.in/xmissionvision.php"
       }
     ]
   },
@@ -234,11 +231,11 @@
     "links": [
       {
         "text": "Sports Facilities",
-        "url": "https://rvrjcce.ac.in/campus/sports"
+        "url": "https://rvrjcce.ac.in/xsportsactivities.php"
       },
       {
         "text": "Sports Achievements",
-        "url": "https://rvrjcce.ac.in/campus/sports/achievements"
+        "url": "https://rvrjcce.ac.in/xsportsactivities.php"
       }
     ]
   },
@@ -306,11 +303,11 @@
     "links": [
       {
         "text": "ECE Department",
-        "url": "https://rvrjcce.ac.in/departments/ece"
+        "url": "https://rvrjcce.ac.in/ECE/"
       },
       {
         "text": "ECE Labs",
-        "url": "https://rvrjcce.ac.in/departments/ece/laboratories"
+        "url": "https://rvrjcce.ac.in/ECE/laboratories.php"
       },
       {
         "text": "ECE Placements",
@@ -332,11 +329,11 @@
     "links": [
       {
         "text": "Placement Cell",
-        "url": "https://rvrjcce.ac.in/placements"
+        "url": "https://rvrjcce.ac.in/xtrainingandplacements.php"
       },
       {
         "text": "Placement Statistics",
-        "url": "https://rvrjcce.ac.in/placements/statistics"
+        "url": "https://rvrjcce.ac.in/xtrainingandplacements.php"
       },
       {
         "text": "Recruiting Companies",
@@ -358,19 +355,19 @@
     "links": [
       {
         "text": "Admission Portal",
-        "url": "https://rvrjcce.ac.in/admissions"
+        "url": "https://rvrjcce.ac.in/xadmission.php"
       },
       {
         "text": "UG Admissions",
-        "url": "https://rvrjcce.ac.in/admissions/undergraduate"
+        "url": "https://rvrjcce.ac.in/xadmission.php"
       },
       {
         "text": "PG Admissions",
-        "url": "https://rvrjcce.ac.in/admissions/postgraduate"
+        "url": "https://rvrjcce.ac.in/xadmission.php"
       },
       {
         "text": "Apply Online",
-        "url": "https://rvrjcce.ac.in/admissions/apply-online"
+        "url": "https://rvrjcce.ac.in/xadmission.php"
       }
     ]
   },
@@ -388,11 +385,11 @@
     "links": [
       {
         "text": "Fee Structure",
-        "url": "https://rvrjcce.ac.in/admissions/fee-structure"
+        "url": "https://rvrjcce.ac.in/xfeepayments.php"
       },
       {
         "text": "Fee Payment",
-        "url": "https://rvrjcce.ac.in/admissions/fee-payment"
+        "url": "https://rvrjcce.ac.in/xfeepayments.php"
       }
     ]
   },
@@ -410,7 +407,7 @@
     "links": [
       {
         "text": "Hostel Information",
-        "url": "https://rvrjcce.ac.in/campus/hostels"
+        "url": "https://rvrjcce.ac.in/xhostels.php"
       },
       {
         "text": "Hostel Application",
@@ -483,7 +480,7 @@
     "links": [
       {
         "text": "Scholarships",
-        "url": "https://rvrjcce.ac.in/students/scholarships"
+        "url": "https://rvrjcce.ac.in/xscholarships.php"
       },
       {
         "text": "Financial Aid",
@@ -530,7 +527,7 @@
     "links": [
       {
         "text": "Research Centers",
-        "url": "https://rvrjcce.ac.in/research/centers"
+        "url": "https://rvrjcce.ac.in/xresearchcenters.php"
       },
       {
         "text": "Publications",

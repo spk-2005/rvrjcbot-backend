@@ -1,34 +1,40 @@
 import express from 'express';
-import { getChatbotResponse } from '../services/nlpService.js';
+import { getChatbotResponse, handleConversation } from '../services/nlpService.js';
 
 const router = express.Router();
+// Store sessions in memory (consider using a database for production)
+const sessions = new Map();
 
 router.post('/', async (req, res) => {
     const userMessage = req.body.message;
+    const sessionId = req.body.sessionId || generateSessionId();
+    
     if (!userMessage) {
         return res.status(400).json({ error: "Message is required" });
     }
     
     try {
-        // Get the chatbot response
-        const response = await getChatbotResponse(userMessage);
-        
-        // Ensure we have a properly structured response
-        let formattedResponse = {};
-        
-        if (typeof response === 'string') {
-            // If the response is just a string, convert to object format
-            formattedResponse = {
-                text: response,
-                links: []
-            };
-        } else if (typeof response === 'object') {
-            // If response is already an object
-            formattedResponse = {
-                text: response.text || (typeof response === 'object' ? JSON.stringify(response) : response),
-                links: Array.isArray(response.links) ? response.links : []
-            };
+        // Get or create session history
+        if (!sessions.has(sessionId)) {
+            sessions.set(sessionId, []);
         }
+        
+        const sessionHistory = sessions.get(sessionId);
+        // Add user message to history
+        sessionHistory.push({ sender: "user", message: userMessage });
+        
+        // Get response using conversation context
+        const result = handleConversation(userMessage, sessionHistory);
+        
+        // Add bot response to history
+        sessionHistory.push({ sender: "bot", message: result.response });
+        
+        // Format response for the frontend
+        const formattedResponse = {
+            response: result.response,
+            links: result.links || [],
+            sessionId: sessionId
+        };
         
         // Log what we're sending back (for debugging)
         console.log("Sending response:", JSON.stringify(formattedResponse, null, 2));
@@ -41,4 +47,10 @@ router.post('/', async (req, res) => {
     }
 });
 
-export default router;
+// Generate a random session ID
+function generateSessionId() {
+    return Math.random().toString(36).substring(2, 15) + 
+           Math.random().toString(36).substring(2, 15);
+}
+
+export default router;  
