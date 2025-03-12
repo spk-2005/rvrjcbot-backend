@@ -1,4 +1,87 @@
-{
+ {
+    "frustration": {
+      "keywords": [
+        "this is not helpful",
+        "i'm not happy",
+        "this is useless",
+        "not working",
+        "this is frustrating",
+        "this sucks",
+        "i’m disappointed"
+      ],
+      "response": "😔 I'm sorry you're feeling that way. I'm here to help—please let me know what exactly you're looking for, and I'll do my best to assist you.",
+      "sentiment": "negative",
+      "links": []
+    },
+    "angry_feedback": {
+      "keywords": [
+        "you are stupid",
+        "this is dumb",
+        "worst assistant",
+        "you don't work",
+        "you're useless",
+        "bad bot"
+      ],
+      "response": "😟 I'm here to help, and I'm sorry if I haven’t met your expectations. Let me know how I can better assist you with information about RVR & JC College of Engineering.",
+      "sentiment": "negative",
+      "links": []
+    },
+    "confused_user": {
+      "keywords": [
+        "i don't understand",
+        "what are you saying",
+        "this makes no sense",
+        "i'm confused",
+        "please explain better"
+      ],
+      "response": "🤔 Sorry if I confused you. Could you please rephrase your question? I'll try to provide a better answer.",
+      "sentiment": "negative",
+      "links": []
+    },
+    "no_help_found": {
+      "keywords": [
+        "you didn’t answer my question",
+        "still not clear",
+        "you are not helping",
+        "i didn't get what i wanted"
+      ],
+      "response": "😕 I apologize if I didn't provide the answer you were looking for. Could you please provide more details so I can assist you better?",
+      "sentiment": "negative",
+      "links": []
+    },
+    "sarcastic_remarks": {
+      "keywords": [
+        "great help 😒",
+        "what a smart assistant 🙄",
+        "wow very helpful not",
+        "brilliant response not"
+      ],
+      "response": "😅 I get that you're being sarcastic, but I still want to help you seriously. Could you let me know what you're trying to find?",
+      "sentiment": "negative",
+      "links": []
+    },
+  "how_are_you": {
+    "keywords": [
+      "how are you",
+      "how's it going",
+      "how do you do"
+    ],
+    "response": "I'm doing great, thank you! 😊 I'm here to provide information about RVR & JC College of Engineering. What would you like to know?",
+    "sentiment": "positive",
+    "links": []
+  },
+
+  "name_inquiry": {
+    "keywords": [
+      "what is your name",
+      "who are you",
+      "name",
+      "tell me your name"
+    ],
+    "response": "I am the virtual assistant for RVR & JC College of Engineering. I'm here to help you with any information related to the college. How can I assist you today?",
+    "sentiment": "neutral",
+    "links": []
+  }, 
   "greetings": {
     "keywords": [
       "hello",
@@ -10,16 +93,6 @@
       "namaste"
     ],
     "response": "Hello! 👋 Welcome to the RVR & JC College of Engineering virtual assistant. How can I help you today?",
-    "sentiment": "positive",
-    "links": []
-  },
-  "how_are_you": {
-    "keywords": [
-      "how are you",
-      "how's it going",
-      "how do you do"
-    ],
-    "response": "I'm doing great, thank you! 😊 I'm here to provide information about RVR & JC College of Engineering. What would you like to know?",
     "sentiment": "positive",
     "links": []
   },

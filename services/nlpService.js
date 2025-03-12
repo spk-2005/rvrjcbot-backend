@@ -43,6 +43,8 @@ export const loadTrainingData = () => {
 
 // Function to correct spelling in text using natural's Levenshtein distance
 const correctSpelling = (text) => {
+  if (!text) return '';
+  
   const tokens = tokenizer.tokenize(text.toLowerCase());
   const corrected = tokens.map(word => {
     // Skip short words, they're often false positives
@@ -70,26 +72,52 @@ const correctSpelling = (text) => {
   return corrected.join(' ');
 };
 
-// Preprocessing function: spell check → tokenize → remove stopwords → stem
+// Define a list of question words and important words to preserve
+const preservedWords = ['how', 'what', 'when', 'where', 'why', 'who', 'which', 
+                        'can', 'do', 'does', 'is', 'are', 'will', 'should'];
+
+// Preprocessing function: tokenize → remove stopwords (keeping preserved words) → stem
 const preprocessText = (text) => {
+  if (!text) return '';
+  
   const tokens = tokenizer.tokenize(text.toLowerCase());
-  const filtered = removeStopwords(tokens);
+  
+  // Remove stopwords but keep preserved words
+  const filteredStopwords = removeStopwords(tokens);
+  const preservedTokens = tokens.filter(token => 
+    preservedWords.includes(token) && !filteredStopwords.includes(token)
+  );
+  
+  const filtered = [...filteredStopwords, ...preservedTokens];
   const stemmed = filtered.map(word => stemmer.stem(word));
+  
   return stemmed.join(' ');
 };
 
 // Enhanced preprocessing with spell correction
 const preprocessWithSpellCorrection = (text) => {
+  if (!text) return '';
+  
   // Apply spelling correction only if dictionary is populated
   const correctedText = dictionary.length > 0 ? correctSpelling(text) : text;
   const tokens = tokenizer.tokenize(correctedText.toLowerCase());
-  const filtered = removeStopwords(tokens);
+  
+  // Remove stopwords but keep preserved words
+  const filteredStopwords = removeStopwords(tokens);
+  const preservedTokens = tokens.filter(token => 
+    preservedWords.includes(token) && !filteredStopwords.includes(token)
+  );
+  
+  const filtered = [...filteredStopwords, ...preservedTokens];
   const stemmed = filtered.map(word => stemmer.stem(word));
+  
   return stemmed.join(' ');
 };
 
 // Cosine similarity using TF-IDF
 const calculateSemanticSimilarity = (message) => {
+  if (!message) return [];
+  
   const preprocessedMsg = preprocessWithSpellCorrection(message);
   const scores = [];
 
@@ -102,6 +130,8 @@ const calculateSemanticSimilarity = (message) => {
 
 // Find best match intent
 const findBestMatch = (message) => {
+  if (!message) return null;
+  
   const scores = calculateSemanticSimilarity(message);
   let highest = { score: 0.3, index: -1 };
 
@@ -129,21 +159,28 @@ const findBestMatch = (message) => {
 
 // Follow-up handler based on history
 const generateFollowUp = (message, history) => {
+  if (!message || !history || history.length === 0) return null;
+  
   // Apply spelling correction to the message
   const correctedMessage = dictionary.length > 0 ? correctSpelling(message) : message;
   const messageLower = correctedMessage.toLowerCase();
   
+  // Safely access the last bot message
   const lastBotMessage = history.length >= 2 ? history[history.length - 1].message : null;
+  
+  // Only proceed if we have a valid last message
+  if (!lastBotMessage) return null;
 
-  if (lastBotMessage?.includes('departments') && messageLower.includes('cse')) {
+  if (lastBotMessage.includes('departments') && messageLower.includes('cse')) {
     return {
-      response: trainingData.cse_department.response,
-      links: trainingData.cse_department.links || [],
+      response: trainingData.cse_department?.response || 
+                "The Computer Science and Engineering department offers programs in various specializations.",
+      links: trainingData.cse_department?.links || [],
       isFollowUp: true
     };
   }
 
-  if (lastBotMessage?.includes('placement') && 
+  if (lastBotMessage.includes('placement') && 
       (messageLower.includes('companies') || messageLower.includes('salary') || messageLower.includes('package'))) {
     return {
       response: "Top recruiters include TCS, Infosys, Wipro, etc. Average salary: 4–6 LPA, highest up to 12+ LPA.",
@@ -155,7 +192,7 @@ const generateFollowUp = (message, history) => {
     };
   }
 
-  if (lastBotMessage?.includes('admission') &&
+  if (lastBotMessage.includes('admission') &&
       (messageLower.includes('when') || messageLower.includes('date') || messageLower.includes('deadline'))) {
     return {
       response: "Admissions begin in May after EAPCET results. Check the website for dates.",
@@ -169,7 +206,7 @@ const generateFollowUp = (message, history) => {
   return null;
 };
 
-// Direct chatbot response (fallback)
+// Direct chatbot response
 export const getChatbotResponse = (message) => {
   if (!message) {
     return {
@@ -177,7 +214,59 @@ export const getChatbotResponse = (message) => {
       links: []
     };
   }
-
+  
+  // Handle greetings
+  const greetings = ["how are you", "how's it going", "how do you do"];
+  const msgLower = message.toLowerCase().trim();
+  
+  if (greetings.includes(msgLower)) {
+    // Make sure we safely access the intent
+    const intent = trainingData['how_are_you'];
+    if (intent) {
+      return {
+        text: intent.response,
+        links: intent.links || []
+      };
+    }
+  }
+  
+  // Check for name inquiry
+  const nameInquiries = ["what is your name", "who are you", "what's your name"];
+  if (nameInquiries.some(inquiry => msgLower.includes(inquiry))) {
+    const intent = trainingData['name_inquiry'];
+    if (intent) {
+      return {
+        text: intent.response,
+        links: intent.links || []
+      };
+    }
+  }
+  
+  // Check for thank you messages
+  const thankYous = ["thank you", "thanks", "thank"];
+  if (thankYous.some(thank => msgLower.includes(thank))) {
+    const intent = trainingData['thanks'];
+    if (intent) {
+      return {
+        text: intent.response,
+        links: intent.links || []
+      };
+    }
+  }
+  
+  // Check for general greetings
+  const generalGreetings = ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"];
+  if (generalGreetings.some(greeting => msgLower.includes(greeting))) {
+    const intent = trainingData['greetings'];
+    if (intent) {
+      return {
+        text: intent.response,
+        links: intent.links || []
+      };
+    }
+  }
+  
+  // Find best match using NLP
   const match = findBestMatch(message);
   if (match) {
     return {
@@ -186,6 +275,7 @@ export const getChatbotResponse = (message) => {
     };
   }
 
+  // Default fallback response
   return {
     text: "I'm not sure I understood that. Try asking about departments, admissions, placements, facilities, or contact info.",
     links: []
@@ -194,8 +284,16 @@ export const getChatbotResponse = (message) => {
 
 // Main handler with context
 export const handleConversation = (message, history) => {
+  if (!message) {
+    return {
+      response: "I didn't receive any message. Can you please repeat?",
+      links: [],
+      isFollowUp: false
+    };
+  }
+  
+  // Apply spelling correction if dictionary is populated
   if (dictionary.length > 0) {
-    // Log original and corrected message for debugging
     const correctedMessage = correctSpelling(message);
     if (correctedMessage !== message) {
       console.log(`Spell correction: "${message}" → "${correctedMessage}"`);
@@ -203,10 +301,12 @@ export const handleConversation = (message, history) => {
     message = correctedMessage;
   }
   
-  const followUp = history.length > 0 ? generateFollowUp(message, history) : null;
+  // Check for follow-up based on conversation history
+  const followUp = history && history.length > 0 ? generateFollowUp(message, history) : null;
 
   if (followUp) return followUp;
 
+  // Get regular response
   const response = getChatbotResponse(message);
   return {
     response: response.text,
