@@ -321,7 +321,7 @@
       "specializations",
       "programs"
     ],
-    "response": "RVR & JC College offers various engineering departments including:\n- Computer Science Engineering (CSE)\n- Information Technology (IT)\n- Electronics & Communication Engineering (ECE)\n- Electrical & Electronics Engineering (EEE)\n- Mechanical Engineering\n- Civil Engineering\n- Chemical Engineering\n- Artificial Intelligence & Data Science\n\nThe college also offers M.Tech, MCA, and Ph.D. programs in several disciplines.",
+    "response": "RVR & JC College offers various specialized departments including:\n- Computer Science & Engineering (CSE)\n- AI & Machine Learning (AI & ML)\n- Artificial Intelligence & Data Science (AI & DS)\n- Computer Science & Business Systems (TCS)\n- CSE (Data Science)\n- CSE (IoT)\n- Quantum Computing\n- Information Technology (IT)\n- Electronics & Communication Engineering (ECE)\n- Electrical & Electronics Engineering (EEE)\n- Mechanical Engineering\n- Civil Engineering\n- Chemical Engineering\n- Management Sciences (BBA & MBA)\n- Computer Applications (MCA)",
     "sentiment": "neutral",
     "links": [
       {
@@ -329,15 +329,12 @@
         "url": "https://rvrjcce.ac.in/departments"
       },
       {
-        "text": "UG Programs",
-        "url": "https://rvrjcce.ac.in/academics/undergraduate"
-      },
-      {
-        "text": "PG Programs",
-        "url": "https://rvrjcce.ac.in/academics/postgraduate"
+        "text": "Programs Offered",
+        "url": "https://rvrjcce.ac.in/xcourses.php"
       }
     ]
   },
+
   "cse_department": {
     "keywords": [
       "cse",
@@ -391,26 +388,18 @@
   "placements": {
     "keywords": [
       "placements",
-      "campus placements",
-      "recruitment",
-      "job opportunities",
-      "companies visiting",
-      "placement cell"
+      "highest package",
+      "salary",
+      "jobs",
+      "recruiters",
+      "placement record"
     ],
-    "response": "RVR & JC College has an excellent placement record with:\n- Dedicated Training & Placement Cell\n- 80%+ placement rate for eligible students\n- 400+ companies visiting for campus recruitment\n- Top recruiters include TCS, Infosys, Wipro, Accenture, IBM, Cognizant, HCL, and many more\n- Pre-placement training programs including aptitude, technical skills, and soft skills\n- Average salary package of 4-6 LPA with highest packages going up to 12+ LPA",
+    "response": "RVR & JC has an outstanding placement record:\n- **Highest Package**: **50.5 LPA** (Offered by D E Shaw Group).\n- **Top Recruiters**: D E Shaw, Darwinbox (16.3 LPA), BNY Mellon (17.3 LPA), TCS, Cognizant, Infosys, and Wipro.\n- Over 400+ companies visit our campus annually.",
     "sentiment": "positive",
     "links": [
       {
-        "text": "Placement Cell",
-        "url": "https://rvrjcce.ac.in/xtrainingandplacements.php"
-      },
-      {
         "text": "Placement Statistics",
         "url": "https://rvrjcce.ac.in/xtrainingandplacements.php"
-      },
-      {
-        "text": "Recruiting Companies",
-        "url": "https://rvrjcce.ac.in/placements/recruiters"
       }
     ]
   },
@@ -621,7 +610,7 @@
       "reach out",
       "helpline"
     ],
-    "response": "You can contact RVR & JC College of Engineering at:\n\nAddress: Chowdavaram, Guntur - 522019, Andhra Pradesh, India\nPhone: +91-863-2288588\nEmail: principal@rvrjc.ac.in\nWebsite: https://rvrjcce.ac.in\n\nFor admissions: +91-863-2288444\nFor placements: +91-863-2288777",
+    "response": "You can contact RVR & JC College of Engineering at:\n\n📍 Main Campus: Chowdavaram, Guntur - 522019, AP :: Ph: 94910 73317, 94910 73318\n🏢 City Office: SVN Colony, Guntur - 522006, AP :: Ph: 0863-2232505\n\n📞 Specific Helplines:\n- Examinations: 9985271179, 9966641530\n- Fee/Accounts: 9493239173, 9490032306\n- Scholarships: 8790413309, 7901493318\n- Principal: 9866281628\n\n📧 Email: principal@rvrjc.ac.in",
     "sentiment": "neutral",
     "links": [
       {
@@ -629,12 +618,28 @@
         "url": "https://rvrjcce.ac.in/contact-us"
       },
       {
-        "text": "Reach Us",
-        "url": "https://rvrjcce.ac.in/contact-us/reach-us"
+        "text": "Staff Directory",
+        "url": "https://rvrjcce.ac.in/xstaffdirectory.php"
+      }
+    ]
+  },
+  "exam_results": {
+    "keywords": [
+      "results",
+      "exam results",
+      "semester results",
+      "check marks"
+    ],
+    "response": "You can check the latest examination results (B.Tech, M.Tech, MBA, MCA) on our official Examination Section portal.",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "Examination Results",
+        "url": "https://rvrjcce.ac.in/examcell/results/"
       },
       {
-        "text": "Feedback Form",
-        "url": "https://rvrjcce.ac.in/contact-us/feedback"
+        "text": "Exam Section",
+        "url": "https://rvrjcce.ac.in/examcell"
       }
     ]
   },

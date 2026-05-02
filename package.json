@@ -17,12 +17,16 @@
     "cors": "^2.8.5",
     "dictionary-en": "^4.0.0",
     "docx": "^9.2.0",
+    "dotenv": "^17.4.2",
     "express": "^4.21.2",
+    "express-rate-limit": "^8.4.1",
     "franc": "^6.2.0",
     "franc-min": "^6.2.0",
     "fs": "^0.0.1-security",
     "fuse": "^0.12.1",
     "fuse.js": "^7.1.0",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
     "mammoth": "^1.9.0",
     "multer": "^1.4.5-lts.1",
     "natural": "^8.0.1",
@@ -32,6 +36,7 @@
     "sentiment": "^5.0.2",
     "spelling-corrector": "^3.0.0",
     "stopword": "^3.1.4",
-    "string-similarity": "^4.0.4"
+    "string-similarity": "^4.0.4",
+    "xss-clean": "^0.1.4"
   }
 }
