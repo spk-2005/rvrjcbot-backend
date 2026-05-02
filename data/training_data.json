@@ -157,22 +157,48 @@
   },
   "about_college": {
     "keywords": [
-      "tell me about college",
-      "about rvrjc",
+      "about",
+      "rvrjc",
+      "history",
+      "establish",
+      "founded",
+      "who started",
+      "nagarjuna education society",
       "college info",
-      "college history",
-      "when established"
+      "rankings",
+      "nirf",
+      "naac",
+      "recognition",
+      "awards",
+      "accreditation",
+      "college rank"
     ],
-    "response": "RVR & JC College of Engineering (RVRJCCE) was established in 1985 and is one of the premier autonomous engineering institutions in Andhra Pradesh. Located in Chowdavaram, Guntur, the college is approved by AICTE and affiliated with Acharya Nagarjuna University. With state-of-the-art infrastructure, experienced faculty, and strong industry connections, RVRJCCE has been consistently recognized for its quality education and excellent placement record.",
+    "response": "R.V.R. & J.C. College of Engineering (RVRJCCE) was established in 1985 by the Nagarjuna Education Society. It is currently celebrating 41 years of academic excellence as a premier autonomous institution in Andhra Pradesh. The college is approved by AICTE and affiliated with Acharya Nagarjuna University. RVR & JC College of Engineering is highly ranked and recognized:\n- **NIRF**: Placed in the 201-250 Rank Band (2022).\n- **NAAC**: Awarded 'A+' Grade with a high CGPA.\n- **NPTEL**: Ranked 6th in India and 1st in Andhra Pradesh (AAA Grade).\n- **Private Engineering Ranking**: 36th in India (Times Engineering 2023).",
     "sentiment": "neutral",
     "links": [
       {
-        "text": "About RVRJC",
+        "text": "RVR & JC History",
         "url": "https://rvrjcce.ac.in/xrvrjchistory.php"
       },
       {
-        "text": "College History",
-        "url": "https://rvrjcce.ac.in/xrvrjchistory.php"
+        "text": "Rankings & Recognitions",
+        "url": "https://rvrjcce.ac.in/xrankingsandrecognitions.php"
+      }
+    ]
+  },
+  "principal": {
+    "keywords": [
+      "principal",
+      "who is the principal",
+      "principal name",
+      "head of college"
+    ],
+    "response": "The current Principal of R.V.R. & J.C. College of Engineering is **Dr. Kolla Srinivas**. You can reach the Principal's office at 9866281628 or via email at principal@rvrjc.ac.in.",
+    "sentiment": "neutral",
+    "links": [
+      {
+        "text": "Principal's Message",
+        "url": "https://rvrjcce.ac.in/xprincipalsmessage.php"
       }
     ]
   },
@@ -205,7 +231,7 @@
       "college success",
       "recognition"
     ],
-    "response": "Over the past 39 years, RVR & JC College of Engineering has earned numerous achievements:\n- Accredited 7 times by NBA for all eligible courses\n- NAAC A+ Grade in 2021\n- Ranked under NIRF 201-250 band (2022)\n- ISO 9001:2015 certified institution\n- Recipient of several research grants from UGC, DST, and other agencies\n- Students consistently excel in national competitions and hackathons",
+    "response": "Over the past 40 years, RVR & JC College of Engineering has earned numerous achievements:\n- Accredited 7 times by NBA for all eligible courses\n- NAAC A+ Grade in 2021\n- Ranked under NIRF 201-250 band (2022)\n- ISO 9001:2015 certified institution\n- Recipient of several research grants from UGC, DST, and other agencies\n- Students consistently excel in national competitions and hackathons",
     "sentiment": "positive",
     "links": [
       {
@@ -239,23 +265,7 @@
       }
     ]
   },
-  "rankings": {
-    "keywords": [
-      "rank",
-      "rankings",
-      "college rank",
-      "NIRF",
-      "college position"
-    ],
-    "response": "RVR & JC College of Engineering has achieved notable rankings:\n- NIRF ranking in the band 201-250 (2022)\n- Among the top engineering colleges in Andhra Pradesh\n- Consistently ranked among the top 100 private engineering colleges in India by various agencies",
-    "sentiment": "positive",
-    "links": [
-      {
-        "text": "NIRF Rankings",
-        "url": "https://rvrjcce.ac.in/xrankingsandrecognitions.php"
-      }
-    ]
-  },
+
   "vision": {
     "keywords": [
       "vision",

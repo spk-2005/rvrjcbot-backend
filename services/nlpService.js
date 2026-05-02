@@ -161,50 +161,33 @@ const findBestMatch = (message) => {
 const generateFollowUp = (message, history) => {
   if (!message || !history || history.length === 0) return null;
   
-  // Apply spelling correction to the message
   const correctedMessage = dictionary.length > 0 ? correctSpelling(message) : message;
   const messageLower = correctedMessage.toLowerCase();
   
-  // Safely access the last bot message
   const lastBotMessage = history.length >= 2 ? history[history.length - 1].message : null;
   
-  // Only proceed if we have a valid last message
   if (!lastBotMessage) return null;
 
-  if (lastBotMessage.includes('departments') && messageLower.includes('cse')) {
-    return {
-      response: trainingData.cse_department?.response || 
-                "The Computer Science and Engineering department offers programs in various specializations.",
-      links: trainingData.cse_department?.links || [],
-      isFollowUp: true
-    };
+  // If the user is asking a follow-up about a specific department
+  if (lastBotMessage.toLowerCase().includes('departments') || lastBotMessage.toLowerCase().includes('branches')) {
+    if (messageLower.includes('cse')) return findBestMatch('cse department');
+    if (messageLower.includes('ece')) return findBestMatch('ece department');
+    if (messageLower.includes('it')) return findBestMatch('information technology');
   }
 
-  if (lastBotMessage.includes('placement') && 
-      (messageLower.includes('companies') || messageLower.includes('salary') || messageLower.includes('package'))) {
-    return {
-      response: "Top recruiters include TCS, Infosys, Wipro, etc. Average salary: 4–6 LPA, highest up to 12+ LPA.",
-      links: [
-        { url: "https://rvrjcce.ac.in/placements/recruiters", text: "Our Recruiters" },
-        { url: "https://rvrjcce.ac.in/placements/statistics", text: "Placement Statistics" }
-      ],
-      isFollowUp: true
-    };
-  }
-
-  if (lastBotMessage.includes('admission') &&
-      (messageLower.includes('when') || messageLower.includes('date') || messageLower.includes('deadline'))) {
-    return {
-      response: "Admissions begin in May after EAPCET results. Check the website for dates.",
-      links: [
-        { url: "https://rvrjcce.ac.in/admissions/schedule", text: "Admission Schedule" }
-      ],
-      isFollowUp: true
-    };
+  // If the user is asking about placements after a placement related message
+  if (lastBotMessage.toLowerCase().includes('placement') || lastBotMessage.toLowerCase().includes('job')) {
+    if (messageLower.includes('salary') || messageLower.includes('package') || messageLower.includes('highest')) {
+      return findBestMatch('highest package');
+    }
+    if (messageLower.includes('companies') || messageLower.includes('recruiters')) {
+      return findBestMatch('top recruiters');
+    }
   }
 
   return null;
 };
+
 
 // Direct chatbot response
 export const getChatbotResponse = (message) => {
@@ -214,60 +197,78 @@ export const getChatbotResponse = (message) => {
       links: []
     };
   }
-  
-  // Handle greetings
-  const greetings = ["how are you", "how's it going", "how do you do"];
+
   const msgLower = message.toLowerCase().trim();
-  
-  if (greetings.includes(msgLower)) {
-    // Make sure we safely access the intent
+
+  // === PRIORITY KEYWORD ROUTING (runs FIRST before any greeting checks) ===
+  const priorityRoutes = [
+    { keywords: ['principal', 'head of college', 'who leads', 'who is principal'], intent: 'principal' },
+    { keywords: ['nirf', 'naac', 'ranking', 'accreditation', 'recognition', 'nba'], intent: 'rankings' },
+    { keywords: ['placement', 'package', 'salary', 'recruiters', 'lpa', 'recruiter', 'campus jobs', 'campus drive', 'placed'], intent: 'placements' },
+    { keywords: ['departments', 'branches', 'show departments', 'courses', 'programs available'], intent: 'departments' },
+    { keywords: ['phone number', 'helpline', 'contact number', 'how to contact', 'call college', 'contact helpline', 'helpline number'], intent: 'contact_info' },
+    { keywords: ['results', 'exam results', 'semester results', 'check results', 'check marks', 'hall ticket'], intent: 'exam_results' },
+    { keywords: ['hostel', 'accommodation', 'boarding', 'where to stay', 'stay'], intent: 'hostel_facilities' },
+    { keywords: ['scholarship', 'financial aid', 'fee concession', 'merit scholarship'], intent: 'scholarships' },
+    { keywords: ['library', 'books', 'digital library', 'reading room', 'e-resources'], intent: 'library' },
+    { keywords: ['vision', 'mission', 'college goal', 'college aim', 'objective'], intent: 'vision' },
+    { keywords: ['history', 'founded', 'established', 'when was', 'nagarjuna', 'how old'], intent: 'about_college' },
+    { keywords: ['location', 'address', 'where is', 'campus address', 'how to reach', 'guntur'], intent: 'location' },
+    { keywords: ['alumni', 'graduates', 'old students', 'famous alumni'], intent: 'notable_alumni' },
+    { keywords: ['research', 'publications', 'patents', 'innovation', 'r&d', 'r & d'], intent: 'research' },
+    { keywords: ['sports', 'games', 'athletics', 'gymnasium', 'cricket', 'basketball', 'football'], intent: 'sports' },
+    { keywords: ['events', 'fest', 'technical fest', 'cultural', 'ecstasy', 'euphoria', 'celebration'], intent: 'events' },
+    { keywords: ['admission', 'apply', 'eamcet', 'eapcet', 'join college', 'how to join', 'how to get admission'], intent: 'admission_process' },
+    { keywords: ['fee structure', 'tuition fee', 'college fees', 'cost', 'semester fee'], intent: 'fees' },
+    { keywords: ['cse', 'computer science engineering'], intent: 'cse_department' },
+    { keywords: ['ece', 'electronics communication'], intent: 'ece_department' },
+  ];
+
+  for (const route of priorityRoutes) {
+    if (route.keywords.some(kw => msgLower.includes(kw))) {
+      const intent = trainingData[route.intent];
+      if (intent) {
+        return { text: intent.response, links: intent.links || [] };
+      }
+    }
+  }
+
+  // Handle exact greeting phrases (uses word-boundary to avoid 'hi' matching 'scholarship')
+  const exactGreetings = ["how are you", "how's it going", "how do you do"];
+  if (exactGreetings.includes(msgLower)) {
     const intent = trainingData['how_are_you'];
-    if (intent) {
-      return {
-        text: intent.response,
-        links: intent.links || []
-      };
-    }
+    if (intent) return { text: intent.response, links: intent.links || [] };
   }
-  
-  // Check for name inquiry
-  const nameInquiries = ["what is your name", "who are you", "what's your name"];
-  if (nameInquiries.some(inquiry => msgLower.includes(inquiry))) {
+
+  // Name inquiry (only exact standalone phrases)
+  const nameInquiries = ["what is your name", "who are you", "what's your name", "your name"];
+  if (nameInquiries.some(q => msgLower === q || msgLower.startsWith(q))) {
     const intent = trainingData['name_inquiry'];
-    if (intent) {
-      return {
-        text: intent.response,
-        links: intent.links || []
-      };
-    }
+    if (intent) return { text: intent.response, links: intent.links || [] };
   }
-  
-  // Check for thank you messages
-  const thankYous = ["thank you", "thanks", "thank"];
-  if (thankYous.some(thank => msgLower.includes(thank))) {
+
+  // Thank you
+  const thankYous = ["thank you", "thanks", "thank you so much"];
+  if (thankYous.some(t => msgLower === t || msgLower.includes(t))) {
     const intent = trainingData['thanks'];
-    if (intent) {
-      return {
-        text: intent.response,
-        links: intent.links || []
-      };
-    }
+    if (intent) return { text: intent.response, links: intent.links || [] };
   }
-  
-  // Check for general greetings
-  const generalGreetings = ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"];
-  if (generalGreetings.some(greeting => msgLower.includes(greeting))) {
+
+  // General greetings — use word-boundary regex to avoid partial matches
+  const greetingWords = ["hello", "hey", "good morning", "good afternoon", "good evening", "namaste"];
+  const isGreeting = greetingWords.some(g => new RegExp(`\\b${g}\\b`).test(msgLower));
+  // Also match pure "hi" only when the full message is just "hi" or "hi!"
+  const isPureHi = /^\s*hi[!?.]?\s*$/.test(msgLower);
+  if (isGreeting || isPureHi) {
     const intent = trainingData['greetings'];
-    if (intent) {
-      return {
-        text: intent.response,
-        links: intent.links || []
-      };
-    }
+    if (intent) return { text: intent.response, links: intent.links || [] };
   }
-  
+
+
   // Find best match using NLP
   const match = findBestMatch(message);
+
+
   if (match) {
     return {
       text: match.response,
